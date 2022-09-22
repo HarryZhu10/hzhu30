@@ -14,3 +14,8 @@ def max_end3(nums):
 
 
   return nums
+
+
+#I made an if statement that checks if the first index is bigger than the last. A while loop will replace every value with the bigger of the two values.
+#max_end3([2,4,5,73,4]) ----> [4,4,4,4,4]
+#max_end3([7,4,3,2,4,6]) -----> [7,7,7,7,7,7]
