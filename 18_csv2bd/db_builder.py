@@ -7,9 +7,13 @@ import sqlite3   #enable control of an sqlite database
 import csv       #facilitate CSV I/O
 
 
+<<<<<<< HEAD
 
 
 DB_FILE="courses"
+=======
+DB_FILE="discobandit.db"
+>>>>>>> e0cef4c1c003632e887ad803b325b62725fabaa1
 
 db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
 c = db.cursor()               #facilitate db ops -- you will use cursor to trigger db events
@@ -20,6 +24,7 @@ c = db.cursor()               #facilitate db ops -- you will use cursor to trigg
 # < < < INSERT YOUR TEAM'S POPULATE-THE-DB CODE HERE > > >
 
 
+<<<<<<< HEAD
 command = "CREATE TABLE rosters(name TEXT, mark INTEGER);"
 # test SQL stmt in sqlite3 shell, save as string
 c.execute(command)    # run SQL statement
@@ -30,8 +35,17 @@ with open('courses.csv', newline='') as csvfile:
         row_data = row['code']
         mark_data = row['mark']
         c.execute("INSERT INTO rosters VALUES(" + '"' +  row_data + '"'  + "," + mark_data + ");")
+=======
+command = ""          # test SQL stmt in sqlite3 shell, save as string
+c.execute(command)    # run SQL statement
+
+>>>>>>> e0cef4c1c003632e887ad803b325b62725fabaa1
 #==========================================================
 
 db.commit() #save changes
 db.close()  #close database
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e0cef4c1c003632e887ad803b325b62725fabaa1
