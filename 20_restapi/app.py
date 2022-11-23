@@ -8,12 +8,23 @@ time spent
 
 from flask import Flask
 from flask import render_template
+import requests
 
 app = Flask(__name__)
+<<<<<<< HEAD
+=======
+
+key = open("key_nasa.txt").read()
+urlString = "https://api.nasa.gov/planetary/apod?api_key=" + key
+res = requests.get(urlString)
+json = res.json()
+#print(res.text) #str type
+#print(json["url"])
+>>>>>>> 9e8d3ee71eb2def80f93066fadd8f7496a0c3c0c
 
 @app.route("/")
-def display():
-    return render_template('main.html')
+def picture():
+    return render_template('main.html', url = json["url"], explanation = json["explanation"], title = json["title"])
 
 with open('key_nasa.txt') as f:
     key = f.read()
